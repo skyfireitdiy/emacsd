@@ -74,7 +74,6 @@
 
 
 ;; 括号自动完成
-(require 'smartparens-config)
 (smartparens-global-mode t)
 
 ;; 机器学习自动完成
