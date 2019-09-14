@@ -6,6 +6,8 @@
 
 (package-initialize)
 
+(require 'cl)
+
 ;; 插件列表
 (defvar skyfire/packages '(
 						   exec-path-from-shell
@@ -20,10 +22,10 @@
 						   swiper
 						   smartparens
 						   flycheck
+						   popwin
 						   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)
-
 
 ;; 检测是否有未安装的插件
 (defun skyfire/packages-installed-p ()
@@ -47,6 +49,10 @@
 
 ;; 语法检查
 (global-flycheck-mode)
+
+;; 弹出窗
+(require 'popwin)
+(popwin-mode t)
 
 ;; -----------------------------------包相关设置
 
@@ -78,17 +84,20 @@
 (global-set-key (kbd "<f6>") 'ivy-resume)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-(global-set-key (kbd "<f1> l") 'counsel-find-library)
-(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-(global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c j") 'counsel-git-grep)
-(global-set-key (kbd "C-c k") 'counsel-ag)
-(global-set-key (kbd "C-x l") 'counsel-locate)
-(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+(global-set-key (kbd "C-h C-f") 'counsel-describe-function)
+(global-set-key (kbd "C-h C-v") 'counsel-describe-variable)
+(global-set-key (kbd "C-h C-k") 'find-function-on-key)
+
+(global-set-key (kbd "C-h C-l") 'counsel-find-library)
+(global-set-key (kbd "C-h C-i") 'counsel-info-lookup-symbol)
+
+;;(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+;;(global-set-key (kbd "C-c g") 'counsel-git)
+;;(global-set-key (kbd "C-c j") 'counsel-git-grep)
+;;(global-set-key (kbd "C-c k") 'counsel-ag)
+;;(global-set-key (kbd "C-x l") 'counsel-locate)
+;;(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+;;(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
 
 ;; 括号自动完成
@@ -145,7 +154,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(company-auto-complete t)
+ '(company-minimum-prefix-length 1)
+ '(company-tabnine-insert-arguments nil)
+ '(company-tabnine-wait 0.5)
+ '(company-tooltip-idle-delay 0.0))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
