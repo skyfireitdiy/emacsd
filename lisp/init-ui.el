@@ -1,8 +1,10 @@
 
 ;; 关闭工具栏
 (tool-bar-mode -1)
+
 ;; 关闭滚动栏
-(scroll-bar-mode -1)
+;;(scroll-bar-mode -1)
+
 ;; 显示行号
 (global-linum-mode 1)
 

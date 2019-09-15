@@ -38,18 +38,18 @@
 
 (global-set-key (kbd "C-c \\") 'indent-region-or-buffer)
 
-(global-set-key (kbd "C-S-a") 'mark-page)
+(global-set-key (kbd "C-c C-a") 'mark-page)
 
-(global-set-key (kbd "C-S-c") 'kill-ring-save)
+(global-set-key (kbd "C-c C-c") 'kill-ring-save)
 
-(global-set-key (kbd "C-S-v") 'yank)
+(global-set-key (kbd "C-c C-v") 'yank)
 
-(global-set-key (kbd "C-S-x") 'kill-region)
+(global-set-key (kbd "C-c C-x") 'kill-region)
 
-(global-set-key (kbd "C-S-z") 'undo)
+(global-set-key (kbd "C-c C-z") 'undo)
 
-(global-set-key (kbd "C-S-o") 'counsel-find-file)
+(global-set-key (kbd "C-c C-o") 'counsel-find-file)
 
-(global-set-key (kbd "C-S-p") 'neotree-dir)
+(global-set-key (kbd "C-c C-p") 'neotree-dir)
 
 (provide 'init-keymap)
