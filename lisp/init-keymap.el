@@ -50,6 +50,6 @@
 
 (global-set-key (kbd "C-S-o") 'counsel-find-file)
 
-
+(global-set-key (kbd "C-S-p") 'neotree-dir)
 
 (provide 'init-keymap)
