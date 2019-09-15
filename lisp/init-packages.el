@@ -52,6 +52,9 @@
 (global-company-mode 1)
 (setq company-auto-complete t)
 (setq company-minimum-prefix-length 1)
+(setq company-auto-complete-chars nil)
+(setq company-tooltip-idle-delay 0.0)
+
 
 ;; Dlang
 (require 'company-dcd)
@@ -82,7 +85,7 @@
 (setq company-show-numbers t)
 (setq company-tabnine-insert-arguments nil)
 (setq company-tabnine-wait 0.5)
-(setq company-tooltip-idle-delay 0.0)
+
 
 
 ;; 语法检查
