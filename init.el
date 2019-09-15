@@ -1,6 +1,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+;; 需要的一些函数
+(require 'init-func)
 (require 'init-packages)
 (require 'init-keymap)
 (require 'init-ui)
