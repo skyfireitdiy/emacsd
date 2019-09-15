@@ -3,7 +3,7 @@
 
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
-(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
@@ -13,6 +13,10 @@
 
 (global-set-key (kbd "C-h C-l") 'counsel-find-library)
 (global-set-key (kbd "C-h C-i") 'counsel-info-lookup-symbol)
+
+
+(global-set-key (kbd "<f8>") 'neotree-toggle)
+
 
 ;;(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 ;;(global-set-key (kbd "C-c g") 'counsel-git)
@@ -28,8 +32,24 @@
 (global-set-key (kbd "C-c <f3>") 'skyfire-open-init-keymap)
 (global-set-key (kbd "C-c <f4>") 'skyfire-open-init-ui)
 (global-set-key (kbd "C-c <f5>") 'skyfire-open-init-better-defaults)
+(global-set-key (kbd "C-c <f6>") 'skyfire-open-init-func)
+
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+(global-set-key (kbd "C-c \\") 'indent-region-or-buffer)
+
+(global-set-key (kbd "C-S-a") 'mark-page)
+
+(global-set-key (kbd "C-S-c") 'kill-ring-save)
+
+(global-set-key (kbd "C-S-v") 'yank)
+
+(global-set-key (kbd "C-S-x") 'kill-region)
+
+(global-set-key (kbd "C-S-z") 'undo)
+
+(global-set-key (kbd "C-S-o") 'counsel-find-file)
 
 
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 (provide 'init-keymap)

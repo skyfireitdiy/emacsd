@@ -22,6 +22,7 @@
 						   smartparens
 						   flycheck
 						   popwin
+						   neotree
 						   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)
@@ -97,5 +98,8 @@
 
 ;; 括号匹配
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
+;; 侧边目录
+(require 'neotree)
 
 (provide 'init-packages)
