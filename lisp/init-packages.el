@@ -23,8 +23,6 @@
 						   flycheck
 						   popwin
 						   neotree
-						   markdown-mode
-						   edit-indirect
 						   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)

@@ -36,20 +36,28 @@
 
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
-(global-set-key (kbd "C-c C-\\") 'indent-region-or-buffer)
+(global-set-key (kbd "C-S-\\") 'indent-region-or-buffer)
 
-(global-set-key (kbd "C-c C-a") 'mark-page)
+(global-set-key (kbd "C-S-a") 'mark-page)
 
-(global-set-key (kbd "C-c C-c") 'kill-ring-save)
+(global-set-key (kbd "C-S-c") 'kill-ring-save)
 
-(global-set-key (kbd "C-c C-v") 'yank)
+(global-set-key (kbd "C-S-v") 'yank)
 
-(global-set-key (kbd "C-c C-x") 'kill-region)
+(global-set-key (kbd "C-S-x") 'kill-region)
 
-(global-set-key (kbd "C-c C-z") 'undo)
+(global-set-key (kbd "C-S-z") 'undo)
 
-(global-set-key (kbd "C-c C-o") 'counsel-find-file)
+(global-set-key (kbd "C-S-o") 'counsel-find-file)
 
-(global-set-key (kbd "C-c C-p") 'neotree-dir)
+(global-set-key (kbd "C-S-p") 'neotree-dir)
+
+(global-set-key (kbd "C-S-r") 'replace-string)
+
+(global-set-key (kbd "M-S-r") 'replace-regexp)
+
+(global-set-key (kbd "C-S-s") 'search)
+
+(global-set-key (kbd "M-S-s") 'regexp-search)
 
 (provide 'init-keymap)
