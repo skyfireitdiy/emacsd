@@ -36,7 +36,7 @@
 
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
-(global-set-key (kbd "C-c \\") 'indent-region-or-buffer)
+(global-set-key (kbd "C-c C-\\") 'indent-region-or-buffer)
 
 (global-set-key (kbd "C-c C-a") 'mark-page)
 
