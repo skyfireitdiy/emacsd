@@ -51,7 +51,7 @@
 
 ;; 自动完成
 (global-company-mode 1)
-(setq company-auto-complete t)
+(setq company-auto-complete nil)
 (setq company-minimum-prefix-length 1)
 (setq company-auto-complete-chars nil)
 (setq company-tooltip-idle-delay 0.0)
