@@ -23,6 +23,8 @@
 						   flycheck
 						   popwin
 						   neotree
+						   ace-window
+						   sublimity
 						   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)
@@ -101,5 +103,14 @@
 
 ;; 侧边目录
 (require 'neotree)
+
+
+;; 迷你图
+(require 'sublimity)
+(require 'sublimity-scroll)
+(require 'sublimity-map) ;; experimental
+(require 'sublimity-attractive)
+(sublimity-mode 1)
+
 
 (provide 'init-packages)

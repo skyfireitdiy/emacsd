@@ -60,4 +60,6 @@
 
 (global-set-key (kbd "M-S-s") 'regexp-search)
 
+(global-set-key (kbd "C-o") 'ace-window)
+
 (provide 'init-keymap)

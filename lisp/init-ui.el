@@ -5,6 +5,9 @@
 ;; 关闭滚动栏
 (scroll-bar-mode -1)
 
+;; 关闭菜单栏
+(menu-bar-mode -1)
+
 ;; 显示行号
 (global-linum-mode 1)
 
