@@ -26,6 +26,8 @@
 						   ace-window
 						   sublimity
 						   projectile
+						   indent-guide
+						   aggressive-indent
 						   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)
@@ -52,13 +54,6 @@
 ;; 可执行文件路径
 (exec-path-from-shell-initialize)
 
-;; 自动完成
-(global-company-mode 1)
-(setq company-auto-complete nil)
-(setq company-minimum-prefix-length 1)
-(setq company-auto-complete-chars nil)
-(setq company-tooltip-idle-delay 0.0)
-
 
 ;; Dlang
 (require 'company-dcd)
@@ -83,13 +78,21 @@
 ;; 括号自动完成
 (smartparens-global-mode t)
 
-;; 机器学习自动完成
-(require 'company-tabnine)
+
+;; 自动完成
+(global-company-mode 1)
 (setq company-idle-delay 0)
 (setq company-show-numbers t)
+(setq company-auto-complete nil)
+(setq company-minimum-prefix-length 1)
+(setq company-auto-complete-chars nil)
+(setq company-tooltip-idle-delay 0.0)
+
+;; 机器学习自动完成
+(require 'company-tabnine)
 (setq company-tabnine-insert-arguments nil)
 (setq company-tabnine-wait 0.5)
-
+(add-to-list 'company-backends #'company-tabnine)
 
 
 ;; 语法检查
@@ -116,5 +119,12 @@
 ;; 项目管理
 (projectile-global-mode)
 (setq projectile-enable-caching t)
+
+;; 缩进线
+(indent-guide-global-mode)
+
+
+;; 保持缩进
+(global-aggressive-indent-mode 1)
 
 (provide 'init-packages)

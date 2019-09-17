@@ -68,4 +68,6 @@
 
 (global-set-key (kbd "C-S-f") 'projectile-find-file)
 
+(global-set-key (kbd "C-?") 'comment-or-uncomment-region)
+
 (provide 'init-keymap)
