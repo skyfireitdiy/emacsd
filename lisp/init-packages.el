@@ -27,7 +27,6 @@
 						   sublimity
 						   projectile
 						   indent-guide
-						   aggressive-indent
 						   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)
@@ -122,9 +121,5 @@
 
 ;; 缩进线
 (indent-guide-global-mode)
-
-
-;; 保持缩进
-(global-aggressive-indent-mode 1)
 
 (provide 'init-packages)
