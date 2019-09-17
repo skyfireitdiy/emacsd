@@ -56,10 +56,16 @@
 
 (global-set-key (kbd "M-S-r") 'replace-regexp)
 
-(global-set-key (kbd "C-S-s") 'search)
+(global-set-key (kbd "C-S-s") 'search-forward)
 
 (global-set-key (kbd "M-S-s") 'regexp-search)
 
 (global-set-key (kbd "C-o") 'ace-window)
+
+(global-set-key (kbd "C-S-g") 'goto-line)
+
+(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
+
+(global-set-key (kbd "C-S-f") 'projectile-find-file)
 
 (provide 'init-keymap)

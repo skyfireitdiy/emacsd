@@ -25,6 +25,7 @@
 						   neotree
 						   ace-window
 						   sublimity
+						   projectile
 						   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)
@@ -109,8 +110,11 @@
 (require 'sublimity)
 (require 'sublimity-scroll)
 (require 'sublimity-map) ;; experimental
-(require 'sublimity-attractive)
-(sublimity-mode 1)
+;;(require 'sublimity-attractive)
+(sublimity-mode t)
 
+;; 项目管理
+(projectile-global-mode)
+(setq projectile-enable-caching t)
 
 (provide 'init-packages)
