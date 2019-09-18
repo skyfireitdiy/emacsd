@@ -22,5 +22,7 @@
 (setq-default tab-width 4)
 (setq tab-width 4)
 
+;; 括号匹配
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 (provide 'init-better-defaults)

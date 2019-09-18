@@ -1,6 +1,6 @@
 ;; 增加清华大学源
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-						 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
 
 (package-initialize)
@@ -9,34 +9,36 @@
 
 ;; 插件列表
 (defvar skyfire/packages '(
-						   exec-path-from-shell
-						   auto-complete
-						   company-dcd
-						   d-mode
-						   format-all
-						   monokai-theme
-						   hungry-delete
-						   company-tabnine
-						   counsel
-						   swiper
-						   smartparens
-						   flycheck
-						   popwin
-						   neotree
-						   ace-window
-						   sublimity
-						   projectile
-						   indent-guide
-						   ) "Default pacakges")
+			   exec-path-from-shell
+			   auto-complete
+			   company-dcd
+			   d-mode
+			   format-all
+			   monokai-theme
+			   hungry-delete
+			   company-tabnine
+			   counsel
+			   swiper
+			   smartparens
+			   flycheck
+			   popwin
+			   neotree
+			   ace-window
+			   sublimity
+			   projectile
+			   indent-guide
+			   graphviz-dot-mode
+			   lua-mode
+			   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)
 
 ;; 检测是否有未安装的插件
 (defun skyfire/packages-installed-p ()
   (loop for pkg in skyfire/packages
-		when (not (package-installed-p pkg)) do (return nil)
-		finally (return t)
-		))
+	when (not (package-installed-p pkg)) do (return nil)
+	finally (return t)
+	))
 
 ;; 安装未安装的插件
 (unless (skyfire/packages-installed-p)
@@ -55,27 +57,52 @@
 
 
 ;; Dlang
-(require 'company-dcd)
-(add-hook 'd-mode-hook 'company-dcd-mode)
-
+(when (package-installed-p 'company-dcd)
+  (progn
+    (require 'company-dcd)
+    (add-hook 'd-mode-hook 'company-dcd-mode)
+    )
+  )
 ;; 保存文件前格式化
-(add-hook 'before-save-hook 'format-all-buffer)
-
+(when (package-installed-p 'format-all)
+  (progn
+    (add-hook 'before-save-hook 'format-all-buffer)
+    )
+  )
 ;; 加载主题
-(load-theme 'monokai t)
+(when (package-installed-p 'monokai-theme)
+  (progn
+    (load-theme 'monokai t)
+    )
+  )
+
+(package-installed-p 'swiper)
 
 ;; 优化删除
-(require 'hungry-delete)
-(global-hungry-delete-mode)
+(when (package-installed-p 'hungry-delete)
+  (progn
+    (require 'hungry-delete)
+    (global-hungry-delete-mode)
+    )
+
+  )
 
 ;; swiper 配置
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+(when (package-installed-p 'swiper)
+  (progn
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq enable-recursive-minibuffers t)
+    )
 
+  )
 
 ;; 括号自动完成
-(smartparens-global-mode t)
+(when (package-installed-p 'smartparens)
+  (progn
+    (smartparens-global-mode t)
+    )
+  )
 
 
 ;; 自动完成
@@ -88,38 +115,65 @@
 (setq company-tooltip-idle-delay 0.0)
 
 ;; 机器学习自动完成
-(require 'company-tabnine)
-(setq company-tabnine-insert-arguments nil)
-(setq company-tabnine-wait 0.5)
-(add-to-list 'company-backends #'company-tabnine)
-
+(when (package-installed-p 'company-tabnine)
+  (progn
+    (require 'company-tabnine)
+    (setq company-tabnine-insert-arguments nil)
+    (setq company-tabnine-wait 0.5)
+    (add-to-list 'company-backends #'company-tabnine)
+    )
+  )
 
 ;; 语法检查
-(global-flycheck-mode)
-
+(when (package-installed-p 'flycheck)
+  (progn
+    (global-flycheck-mode)
+    )
+  )
 ;; 弹出窗
-(require 'popwin)
-(popwin-mode t)
 
-;; 括号匹配
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+(when (package-installed-p 'popwin)
+  (progn
+    (require 'popwin)
+    (popwin-mode t)
+    )
+  )
+
 
 ;; 侧边目录
-(require 'neotree)
+(when (package-installed-p 'neotree)
+  (progn
+    (require 'neotree)
+    )
+
+  )
 
 
 ;; 迷你图
-(require 'sublimity)
-(require 'sublimity-scroll)
-(require 'sublimity-map) ;; experimental
-;;(require 'sublimity-attractive)
-(sublimity-mode t)
+(when (package-installed-p 'sublimity)
+  (progn
+    (require 'sublimity)
+    (require 'sublimity-scroll)
+    (require 'sublimity-map) ;; experimental
+    ;;(require 'sublimity-attractive)
+    (sublimity-mode t)
+    )
 
+  )
 ;; 项目管理
-(projectile-global-mode)
-(setq projectile-enable-caching t)
+(when (package-installed-p 'projectile)
+  (progn
+    (projectile-global-mode)
+    (setq projectile-enable-caching t)
+    )
 
+  )
 ;; 缩进线
-(indent-guide-global-mode)
+(when (package-installed-p 'indent-guide)
+  (progn
+    (indent-guide-global-mode)
+    )
+
+  )
 
 (provide 'init-packages)

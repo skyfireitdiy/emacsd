@@ -3,19 +3,36 @@
 
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
-(global-set-key (kbd "C-s") 'swiper)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "C-h C-f") 'counsel-describe-function)
-(global-set-key (kbd "C-h C-v") 'counsel-describe-variable)
-(global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
-(global-set-key (kbd "C-h C-l") 'counsel-find-library)
-(global-set-key (kbd "C-h C-i") 'counsel-info-lookup-symbol)
+(if (package-installed-p 'swiper)
+	(progn
+	  (global-set-key (kbd "C-s") 'swiper)
+	  (global-set-key (kbd "C-c C-r") 'ivy-resume)
+	  )
+  nil
+  )
+
+(if (package-installed-p 'counsel)
+	(progn
+	  (global-set-key (kbd "M-x") 'counsel-M-x)
+	  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+	  (global-set-key (kbd "C-h C-f") 'counsel-describe-function)
+	  (global-set-key (kbd "C-h C-v") 'counsel-describe-variable)
+	  (global-set-key (kbd "C-h C-l") 'counsel-find-library)
+	  (global-set-key (kbd "C-h C-i") 'counsel-info-lookup-symbol)
+	  )
+  nil
+  )
 
 
-(global-set-key (kbd "<f8>") 'neotree-toggle)
+(global-set-key (kbd "C-h C-k") 'find-function-on-key)	  
+
+(if (package-installed-p 'neotree)
+	(progn
+	  (global-set-key (kbd "<f8>") 'neotree-toggle)
+	  )
+  nil
+  )
 
 
 ;;(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
@@ -60,13 +77,24 @@
 
 (global-set-key (kbd "M-S-s") 'regexp-search)
 
-(global-set-key (kbd "C-o") 'ace-window)
+(if (package-installed-p "ace-window")
+	(progn
+	  (global-set-key (kbd "C-o") 'ace-window)
+	  )
+  nil
+  )
 
 (global-set-key (kbd "C-S-g") 'goto-line)
 
 (define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
 
-(global-set-key (kbd "C-S-f") 'projectile-find-file)
+(if (package-installed-p 'projectile)
+	(progn
+	  (global-set-key (kbd "C-S-f") 'projectile-find-file)
+	  )
+  nil
+  )
+
 
 (global-set-key (kbd "C-?") 'comment-or-uncomment-region)
 
