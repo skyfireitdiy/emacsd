@@ -76,7 +76,7 @@
 
 (when (package-installed-p 'ace-window)
   (progn
-	(global-set-key (kbd "C-o") 'ace-window)
+    (global-set-key (kbd "C-o") 'ace-window)
 	)
   )
 
@@ -95,7 +95,7 @@
 
 (when (package-installed-p 'counsel-etags)
   (progn
-	(global-set-key (kbd "<f12>") 'counsel-etags-find-tag-at-point)
+    (global-set-key (kbd "<f12>") 'counsel-etags-find-tag-at-point)
 	)
   )
 
