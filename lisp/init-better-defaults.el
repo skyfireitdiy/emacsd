@@ -71,5 +71,10 @@
 (sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
 
 
+(add-hook 'focus-out-hook 'save-buffer)
+
+(setq indent-tabs-mode 1)
+(setq tab-width 4)
+
 
 (provide 'init-better-defaults)
