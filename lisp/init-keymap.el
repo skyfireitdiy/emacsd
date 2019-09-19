@@ -99,4 +99,6 @@
 	)
   )
 
+(global-set-key (kbd "s-/") 'hippie-expand)
+
 (provide 'init-keymap)

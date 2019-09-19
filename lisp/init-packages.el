@@ -24,12 +24,14 @@
 						   popwin
 						   neotree
 						   ace-window
-						   sublimity
+						   ;;sublimity
 						   projectile
 						   indent-guide
 						   graphviz-dot-mode
 						   lua-mode
 						   counsel-etags
+						   web-mode
+						   iedit
 						   ) "Default pacakges")
 
 (setq package-selected-packages skyfire/packages)
@@ -175,6 +177,17 @@
     (indent-guide-global-mode)
     )
 
+  )
+
+;;web-mode
+(when (package-installed-p 'web-mode)
+  (progn
+	(setq auto-mode-alist
+		  (append
+		   '(("\\.html\\" . web-mode))
+		   auto-mode-alist
+		   ))
+	)
   )
 
 (provide 'init-packages)
