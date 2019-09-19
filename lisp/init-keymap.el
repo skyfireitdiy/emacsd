@@ -74,7 +74,7 @@
 
 (global-set-key (kbd "M-S-s") 'regexp-search)
 
-(when (package-installed-p "ace-window")
+(when (package-installed-p 'ace-window)
   (progn
 	(global-set-key (kbd "C-o") 'ace-window)
 	)
